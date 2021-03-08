@@ -1102,10 +1102,12 @@ Service Area
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   margin-bottom: 30px;
+  height:555px;
 }
 
 .service-card:hover .service-content a h3 {
   color: #ff743c;
+  
 }
 
 .service-card:hover .service-content .more-btn {
@@ -1130,11 +1132,18 @@ Service Area
 
 .service-card .service-content a h3 {
   font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .service-card .service-content p {
   max-width: 300px;
   margin-bottom: 15px;
+  max-height: 85px;
+  overflow:hidden;
+  /* text-overflow: ellipsis; */
+  
 }
 
 .service-card .service-content .more-btn {
