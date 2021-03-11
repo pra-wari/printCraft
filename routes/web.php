@@ -16,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// Route::get('/', function () {
-//     return view('backEnd.dashboard');
-// });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 
 //Authentication routes
-// Route::get('/register','App\Http\Controllers\AuthenticationController@index');
+ Route::get('register','App\Http\Controllers\Auth\RegisteredUserController@create');
+ Route::post('register','App\Http\Controllers\Auth\RegisteredUserController@store');
+ Route::get('login','App\Http\Controllers\Auth\AuthenticatedSessionController@create');
 // Route::post('/register/user','App\Http\Controllers\AuthenticationController@registerUser');
 // Route::get('/login','App\Http\Controllers\AuthenticationController@login');
 // Route::post('/login/user','App\Http\Controllers\AuthenticationController@loginUser');
@@ -59,3 +62,5 @@ Route::post('update/testimonial/{id}','App\Http\Controllers\MainController@updat
 
 //Price routes
 Route::post('update/prices/{id}','App\Http\Controllers\MainController@updatePrices');
+
+

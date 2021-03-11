@@ -12,7 +12,11 @@ use App\Models\Price;
 class ClientController extends Controller
 {
     public function index(){
-        return redirect('/home');
+        $services = Service::all();
+        $testimonials = Testimonial::all();
+        $price = Price::all();
+        $products = Product::all();
+        return view('index',compact('services','testimonials','price','products'));
     }
 
     public function home(){
@@ -41,7 +45,7 @@ class ClientController extends Controller
 
     public function product(){
         $products = Product::all();
-        $price = Price::find(1)->first();
+        $price = Price::get();
         return view('product',compact('products','price'));
     }
 
