@@ -1,3 +1,15 @@
+<div style="position: absolute;margin: 21px 0px 0px 1110px;">
+    <form method="POST" action="{{ url('logout') }}">
+        @csrf
+
+        <x-dropdown-link :href="url('logout')"
+                onclick="event.preventDefault();
+                            this.closest('form').submit();">
+                            <i class="menu-icon fa fa-power-off"></i>
+            {{ __('Log out') }}
+        </x-dropdown-link>
+    </form>
+</div>
  <!-- Left Panel -->
  <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -32,10 +44,10 @@
                         <a href="#" title="Orders"><i class="menu-icon fa fa-bell"></i>Clients</a>
                     </li>
 
-                    <li class="left-menu-item">
+                    <!-- <li class="left-menu-item">
                         <a href="/logout" onclick="event.preventDefault(); document.getElementById('frm-logout').submit()" title="Logout"><i class="menu-icon fa fa-power-off"></i>Logout</a>
-                    </li>
-                   
+                    </li> -->
+                  
                    
                
                    

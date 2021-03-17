@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
@@ -15,8 +16,14 @@ class MainController extends Controller
     
     // Admin dashboard
     public function index(){
-       
-        return view('backEnd.adminDashboard');
+        $user = Auth::user();
+        if($user && $user->role == "admin"){
+            return view('backEnd.adminDashboard');
+        }
+        else{
+            return redirect('login');
+        }
+        
     }
 
     public function get_content(Request $request){

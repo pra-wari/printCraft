@@ -17,15 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard','App\Http\Controllers\AuthenticationController@index')->middleware(['auth'])->name('dashboard');
 
 //Authentication routes
  Route::get('register','App\Http\Controllers\Auth\RegisteredUserController@create');
  Route::post('register','App\Http\Controllers\Auth\RegisteredUserController@store');
- Route::get('login','App\Http\Controllers\Auth\AuthenticatedSessionController@create');
+ Route::get('login','App\Http\Controllers\Auth\AuthenticatedSessionController@create')->name('login');
+ Route::post('login','App\Http\Controllers\Auth\AuthenticatedSessionController@store');
+ Route::post('logout','App\Http\Controllers\Auth\AuthenticatedSessionController@destroy');
 // Route::post('/register/user','App\Http\Controllers\AuthenticationController@registerUser');
 // Route::get('/login','App\Http\Controllers\AuthenticationController@login');
 // Route::post('/login/user','App\Http\Controllers\AuthenticationController@loginUser');

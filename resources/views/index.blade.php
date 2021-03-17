@@ -99,6 +99,18 @@
                                         <i class='bx bx-plus'></i>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/login" class="nav-link">
+                                        Login
+                                        <i class='bx bx-plus'></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/register" class="nav-link">
+                                        Sign Up
+                                        <i class='bx bx-plus'></i>
+                                    </a>
+                                </li>
                             </ul>
                             <div class="menu-btn">
                                 <a href="tel:+11234567890" class="phone-btn">
