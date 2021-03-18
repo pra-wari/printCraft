@@ -41,6 +41,9 @@ Route::get('/services','App\Http\Controllers\ClientController@services');
 Route::get('/contact','App\Http\Controllers\ClientController@contact');
 Route::get('/product','App\Http\Controllers\ClientController@product');
 Route::post('/submit/query','App\Http\Controllers\ClientController@submitQuery');
+Route::get('product-detail','App\Http\Controllers\ClientController@productDetail')->middleware(['auth']);
+Route::post('product/detail','App\Http\Controllers\ClientController@storeDetail');
+
 
 
 

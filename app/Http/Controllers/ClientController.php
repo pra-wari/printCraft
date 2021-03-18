@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Product;
 use App\Models\Price;
+use App\Models\Booking;
 
 class ClientController extends Controller
 {
@@ -51,5 +52,21 @@ class ClientController extends Controller
 
     public function submitQuery(){
         return redirect('/contact');
+    }
+
+    public function productDetail(){
+       return view('product_detail');
+    }
+
+    public function storeDetail(Request $request){
+        Booking::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+            'size' => $request->size,
+            'address' => $request->address,
+            'status' => "Unpaid"
+        ]);
+        return redirect()->back();
     }
 }

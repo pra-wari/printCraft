@@ -294,11 +294,11 @@
                 @foreach($products as $product)
                     <div class="col-lg-4 col-md-6">
                         <div class="product-card">
-                            <a href="product-details.html">
+                            <a href="product-detail">
                                 <img src="storage/products/{{$product->image}}" alt="Products Images">
                             </a>
                             <div class="product-content">
-                                <a href="product-details.html">
+                                <a href="product-detail">
                                     <h3>{{$product->title}}</h3>
                                 </a>
                                 <p><span>${{$product->price}}</span> +vat</p>
