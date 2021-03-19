@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Testimonial;
 use App\Models\Product;
 use App\Models\Price;
+use App\Models\Booking;
 
 class MainController extends Controller
 {
@@ -31,8 +32,9 @@ class MainController extends Controller
         $products = Product::all();
         $testimonials = Testimonial::all();
         $price = Price::get();
+        $bookings = Booking::all();
        
-        $html = view("backEnd.$request->div_id",compact('services','products','testimonials','price'))->render();
+        $html = view("backEnd.$request->div_id",compact('services','products','testimonials','price','bookings'))->render();
         $response = array(
             "success" => true,
             "html" => $html

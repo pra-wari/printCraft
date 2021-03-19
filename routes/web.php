@@ -43,6 +43,7 @@ Route::get('/product','App\Http\Controllers\ClientController@product');
 Route::post('/submit/query','App\Http\Controllers\ClientController@submitQuery');
 Route::get('product-detail','App\Http\Controllers\ClientController@productDetail')->middleware(['auth']);
 Route::post('product/detail','App\Http\Controllers\ClientController@storeDetail');
+Route::get('my-orders','App\Http\Controllers\ClientController@myOrders');
 
 
 

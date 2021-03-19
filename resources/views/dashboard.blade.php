@@ -94,6 +94,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="/my-orders" class="nav-link">
+                                        My Orders 
+                                        <i class='bx bx-plus'></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/contact" class="nav-link">
                                         Contact
                                         <i class='bx bx-plus'></i>

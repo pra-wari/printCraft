@@ -69,4 +69,9 @@ class ClientController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function myOrders(){
+        $bookings = Booking::all();
+        return view('my_orders',compact('bookings'));
+    }
 }
